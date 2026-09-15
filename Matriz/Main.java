@@ -76,6 +76,8 @@ public class Main {
         System.out.println("1º - Transposição");
         System.out.println("2º - Soma");
         System.out.println("3º - Multiplicação por escalar");
+        System.out.println("4º - Eliminação Gaussiana");
+        System.out.println("5º - Resolver Sistema Linear /Gauss-Jordan");
         System.out.print("Opção: ");
         int selectedOperation = userInput.nextInt();
 
@@ -101,6 +103,14 @@ public class Main {
                         float scalar = readScalar();
                         System.out.println("\nResultado da Multiplicação (escalar * M1):");
                         Operations.times(scalar, m1).display();
+                    }
+                    case 4 -> {
+                     System.out.println("\nResultado da Eliminação Gaussiana:");
+                        Operations.gauss(m1).display();
+                      }
+                    case 5 -> {
+                     System.out.println("\nResultado da Resolução do Sistema (Gauss-Jordan):");
+                        Operations.solve(m1).display();
                     }
                     default -> System.out.println("Opção inválida.");
                 }
